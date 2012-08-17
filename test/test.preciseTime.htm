@@ -1,0 +1,22 @@
+<html>
+<script type="text/javascript" src="preciseTime.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+var test = document.getElementById('test');
+
+test.innerHTML = preciseTime() + '<br />';
+
+window.external.startBench();
+var final = 0;
+for(var i=0,max=1000;i<max;i++)
+for(var j=0,jmax=1000;j<jmax;j++) final ++;
+//document.body.innerHTML += final; 
+test.innerHTML +=  preciseTime();
+test.innerHTML += '<hr />' + window.external.stopBench();
+
+};
+</script>
+<body> 
+<div id="test"></div>
+</body>
+</html>

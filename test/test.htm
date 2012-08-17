@@ -1,0 +1,20 @@
+<html>
+<script>
+onload=function(){
+var test = document.getElementById('test');
+
+test.innerHTML = window.external.preciseTime() + '<br />';
+
+window.external.startBench();
+var final = 0;
+for(var i=0,max=1000;i<max;i++)
+for(var j=0,jmax=1000;j<jmax;j++) final ++;
+document.body.innerHTML += final; 
+alert(window.external.stopBench());
+
+}
+</script>
+<body> 
+<div id="test"></div>
+</body>
+</html>
